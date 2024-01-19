@@ -55,6 +55,7 @@ FUNCTIONS = {
     "mouse": Macro.add_mouse,
     "wheel": Macro.add_wheel,
     "if_eq": Macro.add_if_eq,
+    "while_eq": Macro.add_while_eq,
     "set": Macro.add_set,
     "if_tap": Macro.add_if_tap,
     "if_single": Macro.add_if_single,

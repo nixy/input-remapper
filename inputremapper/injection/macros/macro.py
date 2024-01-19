@@ -591,6 +591,19 @@ class Macro:
 
         self.tasks.append(task)
 
+    def add_while_eq(self, value_1, value_2, then=None)
+        """Repeat actions while two values are equal."""
+        _type_check(then, [Macro, None], "while_eq", 3)
+
+        async def task(handler: Callable):
+            resolved_value_1 = _resolve(value_1)
+            resolved_value_2 = _resolve(value_2)
+            while resolved_value_1 == resolved_value_2:
+                if then is not None:
+                    await then.run(handler)
+
+        self.tasks.append(task)
+
     def add_if_tap(self, then=None, else_=None, timeout=300):
         """If a key was pressed quickly.
 
