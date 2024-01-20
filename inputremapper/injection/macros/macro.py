@@ -591,7 +591,7 @@ class Macro:
 
         self.tasks.append(task)
 
-    def add_while_eq(self, value_1, value_2, then=None)
+    def add_while_eq(self, value_1, value_2, then=None):
         """Repeat actions while two values are equal."""
         _type_check(then, [Macro, None], "while_eq", 3)
 
