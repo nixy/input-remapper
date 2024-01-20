@@ -602,6 +602,9 @@ class Macro:
                 if then is not None:
                     await then.run(handler)
 
+        if isinstance(then, Macro):
+            self.child_macros.append(then)
+
         self.tasks.append(task)
 
     def add_if_tap(self, then=None, else_=None, timeout=300):
