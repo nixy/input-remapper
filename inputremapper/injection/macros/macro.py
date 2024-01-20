@@ -595,7 +595,7 @@ class Macro:
         """Repeat actions while two values are equal."""
         _type_check(then, [Macro, None], "while_eq", 3)
 
-        async def task(handler: Callable):
+        async def task(handler):
             resolved_value_1 = _resolve(value_1)
             resolved_value_2 = _resolve(value_2)
             while resolved_value_1 == resolved_value_2:
