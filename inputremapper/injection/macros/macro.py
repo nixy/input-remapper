@@ -598,9 +598,10 @@ class Macro:
         async def task(handler):
             resolved_value_1 = _resolve(value_1)
             resolved_value_2 = _resolve(value_2)
-            while resolved_value_1 == resolved_value_2:
+            if resolved_value_1 == resolved_value_2:
                 if then is not None:
                     await then.run(handler)
+                    self.tasks.append(task)
 
         if isinstance(then, Macro):
             self.child_macros.append(then)
